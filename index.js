@@ -749,7 +749,7 @@ module.exports = {
                 if (this.settings.isVerbose) console.log('waiting '+this.settings.firstAttemptWaitingInterval+' seconds');
                 await this.delay(this.settings.firstAttemptWaitingInterval * 1000);
 
-                while (taskId > 0) {
+                while (taskId) {
                     await this.JSONRequest('getTaskResult', {
                         'clientKey' :   this.settings.clientKey,
                         'taskId'    :   taskId
